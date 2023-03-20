@@ -156,6 +156,7 @@ class VerifyCodeEditText(context: Context, attrs: AttributeSet?, defStyleAttr: I
         } else if (stringBuilder.length < viewList.size) {
             stringBuilder.append(event?.unicodeChar.toString().uppercase())
             Log.d("VerifyCodeEditText", event?.unicodeChar.toString().uppercase())
+            Log.d("VerifyCodeEditText", stringBuilder.toString())
             resetCodeShowView()
         }
         // KeyCOde 66 is Enter button
