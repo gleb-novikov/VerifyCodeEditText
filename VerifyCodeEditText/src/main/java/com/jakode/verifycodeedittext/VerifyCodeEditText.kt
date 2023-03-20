@@ -140,7 +140,7 @@ class VerifyCodeEditText(context: Context, attrs: AttributeSet?, defStyleAttr: I
     override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection {
         val baseInputConnection = BaseInputConnection(this, false)
         outAttrs.actionLabel = null
-        outAttrs.inputType = InputType.TYPE_CLASS_NUMBER
+        outAttrs.inputType = InputType.TYPE_CLASS_TEXT
         outAttrs.imeOptions = EditorInfo.IME_ACTION_NONE
         return baseInputConnection
     }
