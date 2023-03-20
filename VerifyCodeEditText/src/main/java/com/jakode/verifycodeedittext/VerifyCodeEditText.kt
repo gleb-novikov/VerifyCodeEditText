@@ -151,8 +151,7 @@ class VerifyCodeEditText(context: Context, attrs: AttributeSet?, defStyleAttr: I
         if (keyCode == KeyEvent.KEYCODE_DEL && stringBuilder.isNotEmpty()) {
             stringBuilder.deleteCharAt(stringBuilder.length - 1)
             resetCodeShowView()
-        } else if (event?.number?.toInt() in 48..57 && stringBuilder.length < viewList.size) {
-            // ascii code 48..57 is 0..9 number
+        } else if (stringBuilder.length < viewList.size) {
             stringBuilder.append(event?.number)
             resetCodeShowView()
         }
