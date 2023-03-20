@@ -145,6 +145,7 @@ class VerifyCodeEditText(context: Context, attrs: AttributeSet?, defStyleAttr: I
         return baseInputConnection
     }
 
+    @OptIn(ExperimentalStdlibApi::class)
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (!::stringBuilder.isInitialized) stringBuilder = StringBuilder()
         // KeyCode 67 is Delete button
@@ -152,7 +153,7 @@ class VerifyCodeEditText(context: Context, attrs: AttributeSet?, defStyleAttr: I
             stringBuilder.deleteCharAt(stringBuilder.length - 1)
             resetCodeShowView()
         } else if (stringBuilder.length < viewList.size) {
-            stringBuilder.append(event?.number.uppercase())
+            stringBuilder.append(event?.number?.uppercase() ?: event?.number)
             resetCodeShowView()
         }
         // KeyCOde 66 is Enter button
