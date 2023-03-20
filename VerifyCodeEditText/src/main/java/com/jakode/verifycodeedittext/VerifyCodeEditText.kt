@@ -154,8 +154,8 @@ class VerifyCodeEditText(context: Context, attrs: AttributeSet?, defStyleAttr: I
             stringBuilder.deleteCharAt(stringBuilder.length - 1)
             resetCodeShowView()
         } else if (((event?.number?.toInt() in 48..57) ||
-                    (event?.number?.toInt() in 65..90) ||
-                    (event?.number?.toInt() in 97..122)) &&
+                    (event?.unicodeChar in 65..90) ||
+                    (event?.unicodeChar in 97..122)) &&
                 stringBuilder.length < viewList.size) {
             stringBuilder.append(event?.unicodeChar?.toChar()?.uppercase() ?: "")
             resetCodeShowView()
