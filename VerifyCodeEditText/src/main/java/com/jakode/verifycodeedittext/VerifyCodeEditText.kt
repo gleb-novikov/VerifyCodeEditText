@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.text.InputType
 import android.util.AttributeSet
+import android.util.Log
 import android.view.Gravity
 import android.view.KeyEvent
 import android.view.MotionEvent
@@ -154,6 +155,7 @@ class VerifyCodeEditText(context: Context, attrs: AttributeSet?, defStyleAttr: I
             resetCodeShowView()
         } else if (stringBuilder.length < viewList.size) {
             stringBuilder.append(event?.number?.uppercase() ?: event?.number)
+            Log.d("VerifyCodeEditText", (event?.number?.uppercase() ?: event?.number).toString())
             resetCodeShowView()
         }
         // KeyCOde 66 is Enter button
